@@ -6,9 +6,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mark3labs/mcp-go/mcp"
-	"github.com/mark3labs/mcp-go/mcptest"
-	"github.com/mark3labs/mcp-go/server"
+	"github.com/drobertduke/mcp-go/mcp"
+	"github.com/drobertduke/mcp-go/mcptest"
+	"github.com/drobertduke/mcp-go/server"
 )
 
 func TestServer(t *testing.T) {

@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mark3labs/mcp-go/mcp"
+	"github.com/drobertduke/mcp-go/mcp"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -104,7 +104,7 @@ type sessionTestClientWithLogging struct {
 	sessionID           string
 	notificationChannel chan mcp.JSONRPCNotification
 	initialized         bool
-	loggingLevel 		atomic.Value
+	loggingLevel        atomic.Value
 }
 
 func (f *sessionTestClientWithLogging) SessionID() string {
@@ -136,9 +136,9 @@ func (f *sessionTestClientWithLogging) GetLogLevel() mcp.LoggingLevel {
 
 // Verify that all implementations satisfy their respective interfaces
 var (
-	_ ClientSession 			= (*sessionTestClient)(nil)
-	_ SessionWithTools 			= (*sessionTestClientWithTools)(nil)
-	_ SessionWithLogging		= (*sessionTestClientWithLogging)(nil)
+	_ ClientSession      = (*sessionTestClient)(nil)
+	_ SessionWithTools   = (*sessionTestClientWithTools)(nil)
+	_ SessionWithLogging = (*sessionTestClientWithLogging)(nil)
 )
 
 func TestSessionWithTools_Integration(t *testing.T) {

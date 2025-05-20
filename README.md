@@ -2,9 +2,9 @@
 <div align="center">
 <img src="./logo.png" alt="MCP Go Logo">
 
-[![Build](https://github.com/mark3labs/mcp-go/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mark3labs/mcp-go/actions/workflows/ci.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/mark3labs/mcp-go?cache)](https://goreportcard.com/report/github.com/mark3labs/mcp-go)
-[![GoDoc](https://pkg.go.dev/badge/github.com/mark3labs/mcp-go.svg)](https://pkg.go.dev/github.com/mark3labs/mcp-go)
+[![Build](https://github.com/drobertduke/mcp-go/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/drobertduke/mcp-go/actions/workflows/ci.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/drobertduke/mcp-go?cache)](https://goreportcard.com/report/github.com/drobertduke/mcp-go)
+[![GoDoc](https://pkg.go.dev/badge/github.com/drobertduke/mcp-go.svg)](https://pkg.go.dev/github.com/drobertduke/mcp-go)
 
 <strong>A Go implementation of the Model Context Protocol (MCP), enabling seamless integration between LLM applications and external data sources and tools.</strong>
 
@@ -27,8 +27,8 @@ import (
     "errors"
     "fmt"
 
-    "github.com/mark3labs/mcp-go/mcp"
-    "github.com/mark3labs/mcp-go/server"
+    "github.com/drobertduke/mcp-go/mcp"
+    "github.com/drobertduke/mcp-go/server"
 )
 
 func main() {
@@ -102,7 +102,7 @@ MCP Go handles all the complex protocol details and server management, so you ca
 ## Installation
 
 ```bash
-go get github.com/mark3labs/mcp-go
+go get github.com/drobertduke/mcp-go
 ```
 
 ## Quickstart
@@ -116,8 +116,8 @@ import (
     "context"
     "fmt"
 
-    "github.com/mark3labs/mcp-go/mcp"
-    "github.com/mark3labs/mcp-go/server"
+    "github.com/drobertduke/mcp-go/mcp"
+    "github.com/drobertduke/mcp-go/server"
 )
 
 func main() {
