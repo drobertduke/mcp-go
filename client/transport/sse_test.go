@@ -162,7 +162,7 @@ func TestSSE(t *testing.T) {
 			JSONRPC: "2.0",
 			ID:      mcp.NewRequestId(int64(1)),
 			Method:  "debug/echo",
-			Params:  params,
+			Params:  mustMarshal(params),
 		}
 
 		// Send the request
@@ -297,10 +297,10 @@ func TestSSE(t *testing.T) {
 					JSONRPC: "2.0",
 					ID:      mcp.NewRequestId(int64(100 + idx)),
 					Method:  "debug/echo",
-					Params: map[string]any{
+					Params: mustMarshal(map[string]any{
 						"requestIndex": idx,
 						"timestamp":    time.Now().UnixNano(),
-					},
+					}),
 				}
 
 				resp, err := trans.SendRequest(ctx, request)

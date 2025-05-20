@@ -27,10 +27,10 @@ type Interface interface {
 }
 
 type JSONRPCRequest struct {
-	JSONRPC string        `json:"jsonrpc"`
-	ID      mcp.RequestId `json:"id"`
-	Method  string        `json:"method"`
-	Params  any           `json:"params,omitempty"`
+	JSONRPC string          `json:"jsonrpc"`
+	ID      mcp.RequestId   `json:"id"`
+	Method  string          `json:"method"`
+	Params  json.RawMessage `json:"params,omitempty"`
 }
 
 type JSONRPCResponse struct {

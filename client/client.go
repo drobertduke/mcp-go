@@ -102,11 +102,23 @@ func (c *Client) sendRequest(
 
 	id := c.requestID.Add(1)
 
+	var rawParams json.RawMessage
+	var err error
+	if params != nil {
+		rawParams, err = json.Marshal(params)
+		if err != nil {
+			return nil, fmt.Errorf("failed to marshal params: %w", err)
+		}
+	} else {
+		// Explicitly set to null if params is nil, otherwise it's omitted
+		rawParams = json.RawMessage("null")
+	}
+
 	request := transport.JSONRPCRequest{
 		JSONRPC: mcp.JSONRPC_VERSION,
 		ID:      mcp.NewRequestId(id),
 		Method:  method,
-		Params:  params,
+		Params:  rawParams,
 	}
 
 	response, err := c.transport.SendRequest(ctx, request)

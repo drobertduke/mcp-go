@@ -82,7 +82,7 @@ func TestStdio(t *testing.T) {
 			JSONRPC: "2.0",
 			ID:      mcp.NewRequestId(int64(1)),
 			Method:  "debug/echo",
-			Params:  params,
+			Params:  mustMarshal(params),
 		}
 
 		// Send the request
@@ -216,10 +216,10 @@ func TestStdio(t *testing.T) {
 					JSONRPC: "2.0",
 					ID:      mcp.NewRequestId(int64(100 + idx)),
 					Method:  "debug/echo",
-					Params: map[string]any{
+					Params: mustMarshal(map[string]any{
 						"requestIndex": idx,
 						"timestamp":    time.Now().UnixNano(),
-					},
+					}),
 				}
 
 				resp, err := stdio.SendRequest(ctx, request)
@@ -337,7 +337,7 @@ func TestStdio(t *testing.T) {
 			JSONRPC: "2.0",
 			ID:      mcp.NewRequestId("request-123"),
 			Method:  "debug/echo",
-			Params:  params,
+			Params:  mustMarshal(params),
 		}
 
 		response, err := stdio.SendRequest(ctx, request)
